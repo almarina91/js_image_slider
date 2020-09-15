@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image slider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div id="title" class="grid-item">
+            <h1>iconic chairs</h1>
+        </div>
+        <div id="navArrowL" class = "grid-item">
+            <a class="prev" onclick="minusSlide()">&#8592;</a>
+        </div>
+        <div id="slider" class="grid-item">
+                <div class="slideImages fade">
+                    <img id="chairImage" src="images/barcelonachair.jpeg" >
+                </div>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <div id="description"class="grid-item">
+            <div>
+                <h2 id="chairName">Barcelona chair</h2>
+                <h4 id="chairAuthor">Ludwig Mies van der Rohe</h4>
+                <h5 id="chairYear">1929</h5>
+                <p id="chairText">The Rolex and Rolls-Royce of 20th-century chairs.
+                Designed to complement his German Pavilion for the 1929 International Exhibition in Barcelona,
+                the chair was never intended to be mass-produced.
+                It was intended to just sit there looking fabulous at the Pavilion.
+                It did. It still does.
+                It's not all that comfortable, but it looks as stunning as any chair ever.
+                </p>
+            </div>
+
+        </div>
+        <div id="navArrowR" class="grid-item">
+            <a class="next" onclick="plusSlide()">&#8594</a>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

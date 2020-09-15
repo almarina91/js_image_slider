@@ -1,0 +1,51 @@
+* {
+    font-family: "Helvetica l", Arial, sans-serif;
+
+}
+body {
+    cursor: crosshair;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+    margin-left:70px;
+    margin-right:70px;
+}
+
+#navArrowL {
+    grid-column: 2/3;
+    grid-row: 3/3;
+    color: #5d5d5d;
+}
+
+#navArrowL:hover {
+    cursor: pointer;
+    color: dodgerblue;
+}
+
+#slider {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+
+#navArrowR {
+    grid-column: 4/5;
+    grid-row: 3/3;
+    color: #5d5d5d;
+}
+
+#navArrowR:hover {
+    cursor: pointer;
+    color: dodgerblue;
+}
+
+#description {
+    grid-column: 5/6;
+    grid-row: 2/3;
+}
+
+
+
