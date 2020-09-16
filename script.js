@@ -104,7 +104,7 @@ let currentChairText = document.getElementById("chairText");
 
 function plusSlide() {
     currentChairIndex++;
-    if (currentChairIndex<chairsArray.length) {
+    if (currentChairIndex < chairsArray.length) {
         currentChairImage.src= chairsArray[currentChairIndex].image;
         currentChairName.innerHTML = chairsArray[currentChairIndex].name;
         currentChairAuthor.innerHTML =  chairsArray[currentChairIndex].author;
@@ -223,6 +223,32 @@ function magnify(imgID, zoom) {
 }
 
 magnify("chairImage", 2);
+
+//show and hide chair description
+
+
+function showHideDescription () {
+        let descriptionDisplay = document.getElementById("description");
+        if (descriptionDisplay.style.display === "none") {
+
+            descriptionDisplay.style.display = "block";
+        } else {
+            descriptionDisplay.style.display = "none";
+        }
+
+}
+
+//copy to clipboard function
+
+function copyToClipboard() {
+    let element = document.getElementById("chairText");
+    let elementText = element.textContent;
+    copyText(elementText);
+}
+
+function copyText(text) {
+    navigator.clipboard.writeText(text);
+}
 
 
 
