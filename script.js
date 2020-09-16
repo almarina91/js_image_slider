@@ -101,44 +101,36 @@ let currentChairName = document.getElementById("chairName");
 let currentChairAuthor = document.getElementById("chairAuthor");
 let currentChairYear = document.getElementById("chairYear");
 let currentChairText = document.getElementById("chairText");
+let leftKeyCode = '37';
+let rightKeyCode = '39';
 
 function plusSlide() {
     currentChairIndex++;
-    if (currentChairIndex < chairsArray.length) {
-        currentChairImage.src= chairsArray[currentChairIndex].image;
-        currentChairName.innerHTML = chairsArray[currentChairIndex].name;
-        currentChairAuthor.innerHTML =  chairsArray[currentChairIndex].author;
-        currentChairYear.innerHTML = chairsArray[currentChairIndex].year;
-        currentChairText.innerHTML = chairsArray[currentChairIndex].text;
-
-    } else {
+    if (currentChairIndex > chairsArray.length-1) {
         currentChairIndex = 0;
-        currentChairImage.src = chairsArray[currentChairIndex].image;
-        currentChairName.innerHTML = chairsArray[currentChairIndex].name;
-        currentChairYear.innerHTML = chairsArray[currentChairIndex].year;
-        currentChairText.innerHTML = chairsArray[currentChairIndex].text;
-        currentChairAuthor.innerHTML =  chairsArray[currentChairIndex].author;
-
     }
+
+    let currentChair = chairsArray[currentChairIndex];
+    currentChairImage.src = currentChair.image;
+    currentChairName.innerHTML = currentChair.name;
+    currentChairYear.innerHTML = currentChair.year;
+    currentChairText.innerHTML = currentChair.text;
+    currentChairAuthor.innerHTML =  currentChair.author;
     magnify("chairImage", 3);
 }
 
 function minusSlide() {
     currentChairIndex--;
-    if ( currentChairIndex < chairsArray.length && currentChairIndex!== -1) {
-        currentChairImage.src= chairsArray[currentChairIndex].image;
-        currentChairName.innerHTML = chairsArray[currentChairIndex].name;
-        currentChairAuthor.innerHTML =  chairsArray[currentChairIndex].author;
-        currentChairYear.innerHTML = chairsArray[currentChairIndex].year;
-        currentChairText.innerHTML = chairsArray[currentChairIndex].text;
-    } else  {
+    if ( currentChairIndex < 0) {
         currentChairIndex = chairsArray.length-1;
-        currentChairImage.src = chairsArray[currentChairIndex].image;
-        currentChairName.innerHTML = chairsArray[currentChairIndex].name;
-        currentChairYear.innerHTML = chairsArray[currentChairIndex].year;
-        currentChairText.innerHTML = chairsArray[currentChairIndex].text;
-        currentChairAuthor.innerHTML = chairsArray[currentChairIndex].author;
     }
+
+    let currentChair = chairsArray[currentChairIndex];
+    currentChairImage.src = currentChair.image;
+    currentChairName.innerHTML = currentChair.name;
+    currentChairYear.innerHTML = currentChair.year;
+    currentChairText.innerHTML = currentChair.text;
+    currentChairAuthor.innerHTML = currentChair.author;
     magnify("chairImage", 3);
 }
 
@@ -147,14 +139,16 @@ function checkKey(e) {
 
     e = e || window.event;
 
-    if (e.keyCode == '37') {
+    if (e.keyCode == leftKeyCode) {
         minusSlide();
     }
-    else if (e.keyCode == '39') {
+    else if (e.keyCode == rightKeyCode) {
         plusSlide();
     }
 
 }
+//magnifing image
+//solution from: https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp
 
 function magnify(imgID, zoom) {
     let img, glass, w, h, bw;
@@ -228,13 +222,13 @@ magnify("chairImage", 2);
 
 
 function showHideDescription () {
-        let descriptionDisplay = document.getElementById("description");
-        if (descriptionDisplay.style.display === "none") {
+    let descriptionDisplay = document.getElementById("description");
+    if (descriptionDisplay.style.display === "none") {
 
-            descriptionDisplay.style.display = "block";
-        } else {
-            descriptionDisplay.style.display = "none";
-        }
+        descriptionDisplay.style.display = "block";
+    } else {
+        descriptionDisplay.style.display = "none";
+    }
 
 }
 
