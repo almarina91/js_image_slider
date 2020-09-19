@@ -9,12 +9,19 @@
     <div class="grid-container">
         <div id="title" class="grid-item">
             <h1>iconic chairs</h1>
+            <p id="about" onclick="showHideDescription()">about the chair</p>
+            <p id="copy" onclick="copyToClipboard()">save description</p>
+            <p id="copyAlert" class="alert">copied to clipboard</p>
+            <p id="author" onclick="showHideAuthor()">about the author</p>
+            <div id="navArrowL" class = "grid-item">
+                <a class="prev" onclick="minusSlide()">&#8592;</a>
+            </div>
+            <div id="navArrowR" class="grid-item">
+                <a class="next" onclick="plusSlide()">&#8594</a>
+            </div>
         </div>
-        <div id="navArrowL" class = "grid-item">
-            <a class="prev" onclick="minusSlide()">&#8592;</a>
-        </div>
-        <div id="slider" class="grid-item">
 
+        <div id="slider" class="grid-item">
                 <div class="slideImages">
                     <img alt="image" id="chairImage" src="images/barcelonachair.jpeg" >
                 </div>
@@ -31,16 +38,16 @@
                 It did. It still does.
                 It's not all that comfortable, but it looks as stunning as any chair ever.
                 </p>
+                <p id="aboutAuthor">Ludwig Mies van der Rohe, original name Maria Ludwig Michael Mies,
+                    (born March 27, 1886, Aachen, Germany—died August 17, 1969, Chicago, Illinois, U.S.),
+                    German-born American architect whose rectilinear forms, crafted in elegant simplicity,
+                    epitomized the International Style of architecture.</p>
             </div>
 
+
         </div>
-        <div id="navArrowR" class="grid-item">
-            <a class="next" onclick="plusSlide()">&#8594</a>
-        </div>
-        <div id="buttons" class="grid-item">
-            <p onclick="showHideDescription()">about</p>
-            <p onclick="copyToClipboard()">copy</p>
-        </div>
+
+
     </div>
 
 <script src="script.js"></script>

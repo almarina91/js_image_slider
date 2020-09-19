@@ -3,7 +3,8 @@ let chair = {
     author: "Default",
     year: "Default",
     text: "Default",
-    image: "Default"
+    image: "Default",
+    aboutAuthor:"Default"
 }
 
 let barcelonaChair = Object.create(chair);
@@ -17,6 +18,10 @@ barcelonaChair.text="The Rolex and Rolls-Royce of 20th-century chairs." +
     "                It did. It still does." +
     "                It's not all that comfortable, but it looks as stunning as any chair ever.";
 barcelonaChair.image="images/barcelonachair.jpeg";
+barcelonaChair.aboutAuthor="Ludwig Mies van der Rohe, original name Maria Ludwig Michael Mies," +
+    "(born March 27, 1886, Aachen, Germany—died August 17, 1969, Chicago, Illinois, U.S.)," +
+    "German-born American architect whose rectilinear forms, crafted in elegant simplicity," +
+    "epitomized the International Style of architecture.";
 
 let B32Cesca = Object.create(chair);
 B32Cesca.name = "B32/Cesca";
@@ -30,6 +35,11 @@ B32Cesca.text="Two important milestones in the history of modern furniture\n" +
     "                the B32/Cesca was the real game changer: It offered a comfortable bounce\n" +
     "                and seemed to float a human being on air.";
 B32Cesca.image="images/cescab32breuer.jpg";
+B32Cesca.aboutAuthor="Marcel Breuer, in full Marcel Lajos Breuer," +
+    "(born May 21, 1902, Pécs, Hungary—died July 1, 1981, New York City, New York, U.S.)," +
+    "architect and designer, one of the most-influential exponents of the International Style;" +
+    "he was concerned with applying new forms and uses to newly developed technology and materials" +
+    "in order to create an art expressive of an industrial age.";
 
 let loungeChair = Object.create(chair);
 loungeChair.name="Lounge chair";
@@ -42,18 +52,27 @@ loungeChair.text="Lounge & Ottoman: If you really look, you'll see it's simply a
     "                executive style, masculinity, and comfort. The most collectible models are,\n" +
     "                like this one, vintage rosewood.";
 loungeChair.image="images/eamesloungechair.jpg";
+loungeChair.aboutAuthor="Charles Eames and Ray Eames, Ray Eames née Bernice Alexandria Kaiser," +
+    "(respectively, born June 17, 1907, St. Louis, Missouri, U.S.—died August 21, 1978, St. Louis ;" +
+    "born December 15, 1912, Sacramento, California—died August 21, 1988, Los Angeles )," +
+    "American designers best known for the beauty, comfort, elegance, and delicacy of their mass-producible furniture." +
+    "They also wrote books, made motion pictures, and designed exhibitions, fabrics, and industrial and consumer products.";
 
 let grandComfort = Object.create(chair);
 grandComfort.name="Grand Comfort";
 grandComfort.author = "Le Corbusier";
 grandComfort.year="1928";
-grandComfort.text="Co-designed by Charlotte Perriand and Pierre Jeanneret,\n" +
-    "                the Grand Confort is just a clever way to contain some cushions in an open frame.\n" +
+grandComfort.text="Co-designed by Charlotte Perriand and Pierre Jeanneret, the Grand Confort is just a clever way to contain some cushions in an open frame.\n" +
     "                Or a “cushion basket,” as Corbu himself referred to it.\n" +
     "                With its chrome exoskeleton, the plush classic is the ultimate time-tripper:\n" +
     "                It channels the '30s and the '70s and whenever else people desired a pure and\n" +
     "                comfortable distillation of the International Style.";
 grandComfort.image="images/lecorbusierchair.jpg";
+grandComfort.aboutAuthor="Le Corbusier, byname of Charles-Édouard Jeanneret," +
+    "(born October 6, 1887, La Chaux-de-Fonds, Switzerland—died August 27, 1965, Cap Martin, France)," +
+    "internationally influential Swiss architect and city planner, whose designs combine the functionalism" +
+    "of the modern movement with a bold, sculptural expressionism. He belonged to the first generation of the" +
+    "so-called International school of architecture and was their most able propagandist in his numerous writings.";
 
 let stackingChair = Object.create(chair);
 stackingChair.name = "Stacking Chair";
@@ -65,6 +84,12 @@ stackingChair.text="The groundbreaking first single-form, single-material inject
     "                Swinging '60s in all the right ways. Look closely at how Panton engineered it to\n" +
     "                keep its structural integrity.";
 stackingChair.image="images/pantonstackingchair.jpg";
+stackingChair.aboutAuthor="Verner Panton (13 February 1926 – 5 September 1998)" +
+    "is considered one of Denmark's most influential 20th-century furniture and interior designers." +
+    "During his career, he created innovative and futuristic designs in a variety of materials," +
+    "especially plastics, and in vibrant and exotic colors. His style was very \"1960s\" but regained popularity" +
+    "at the end of the 20th century. As of 2004, Panton's best-known furniture" +
+    "models are still in production (at Vitra, among others).";
 
 let tulipChair = Object.create(chair);
 tulipChair.name="Tulip Chair";
@@ -76,6 +101,9 @@ tulipChair.text="A tectonic design shift occurred overnight when Saarinen reveal
     "                his long desire to clean up, as he called it, the “slum of legs.”\n" +
     "                The result was epic and also as majestically fluid and beautiful as, well, a tulip.";
 tulipChair.image="images/saarinentulip.jpg";
+tulipChair.aboutAuthor="Eero Saarinen, (born August 20, 1910, Kirkkonummi, Finland—died September 1, 1961," +
+    "Ann Arbor, Michigan, U.S.), Finnish-born American architect who was one of the leaders in a trend" +
+    "toward exploration and experiment in American architectural design during the 1950s.";
 
 let thonet209 = Object.create(chair);
 thonet209.name = "Thonet 209";
@@ -92,6 +120,10 @@ thonet209.text="One of the most crucial innovations in the time line of the mode
     "                It was the only chair he felt was as modern as his architecture,\n" +
     "                and it still beguiles us to this day.";
 thonet209.image="images/thonet209.jpg";
+thonet209.aboutAuthor="Michael Thonet, (born July 2, 1796, Boppard, Trier [Germany]—died March 3, 1871, Vienna)," +
+    "German-Austrian pioneer in the industrialization of furniture manufacture, whose experiments in the production" +
+    "of bentwood furniture widely influenced both contemporary and modern styles and whose functional and exquisitely" +
+    "designed chairs are still being manufactured.";
 
 const chairsArray = [barcelonaChair,B32Cesca,loungeChair,grandComfort,stackingChair, tulipChair, thonet209];
 
@@ -101,6 +133,7 @@ let currentChairName = document.getElementById("chairName");
 let currentChairAuthor = document.getElementById("chairAuthor");
 let currentChairYear = document.getElementById("chairYear");
 let currentChairText = document.getElementById("chairText");
+let currentChairAuthorDescription = document.getElementById("aboutAuthor");
 let leftKeyCode = '37';
 let rightKeyCode = '39';
 
@@ -116,6 +149,8 @@ function plusSlide() {
     currentChairYear.innerHTML = currentChair.year;
     currentChairText.innerHTML = currentChair.text;
     currentChairAuthor.innerHTML =  currentChair.author;
+    currentChairAuthorDescription.innerHTML=currentChair.aboutAuthor;
+
     magnify("chairImage", 3);
 }
 
@@ -131,8 +166,11 @@ function minusSlide() {
     currentChairYear.innerHTML = currentChair.year;
     currentChairText.innerHTML = currentChair.text;
     currentChairAuthor.innerHTML = currentChair.author;
+    currentChairAuthorDescription.innerHTML=currentChair.aboutAuthor;
+
     magnify("chairImage", 3);
 }
+// going through chairs using keyboard
 
 document.onkeydown = checkKey;
 function checkKey(e) {
@@ -147,7 +185,7 @@ function checkKey(e) {
     }
 
 }
-//magnifing image
+//magnifying image
 //solution from: https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp
 
 function magnify(imgID, zoom) {
@@ -222,14 +260,70 @@ magnify("chairImage", 2);
 
 
 function showHideDescription () {
-    let descriptionDisplay = document.getElementById("description");
-    if (descriptionDisplay.style.display === "none") {
+    let description = document.getElementById("description");
+    let aboutMenu = document.getElementById("about");
+    let copyMenu = document.getElementById("copy");
+    let chairText = document.getElementById("chairText");
+    let aboutAuthor = document.getElementById("aboutAuthor");
+    let authorMenu = document.getElementById("author");
 
-        descriptionDisplay.style.display = "block";
+    //about the author section is hidden here
+    aboutAuthor.style.display="none";
+
+    if (description.style.display === "none" || description.style.display === "") {
+        description.setAttribute("class", "grid-item slide-left");
+
+        description.style.display = "block";
+        //chair text should now be visible
+        chairText.style.display="block";
+
+        //changes in the menu
+        copyMenu.style.display="block";
+        aboutMenu.innerHTML="close the description";
+        authorMenu.style.display="none";
+
     } else {
-        descriptionDisplay.style.display = "none";
-    }
+        description.setAttribute("class", "grid-item");
 
+        description.style.display = "none";
+        chairText.style.display="none";
+
+        aboutMenu.innerHTML="about the chair";
+        authorMenu.style.display="block";
+        copyMenu.style.display="none";
+    }
+}
+
+//show hide the author
+
+function showHideAuthor () {
+    let authorDisplay = document.getElementById("description");
+    let aboutAuthor = document.getElementById("aboutAuthor");
+    let chairText = document.getElementById("chairText");
+    let aboutMenu = document.getElementById("about");
+    let authorMenu = document.getElementById("author");
+
+    //chair description is hidden here
+    chairText.style.display="none";
+
+    if (authorDisplay.style.display === "none" || authorDisplay.style.display === "") {
+        authorDisplay.setAttribute("class", "grid-item slide-left");
+
+        authorDisplay.style.display = "block";
+        aboutAuthor.style.display="block";
+
+        authorMenu.innerHTML="close the description";
+        aboutMenu.style.display="none";
+
+    } else {
+        authorDisplay.setAttribute("class", "grid-item");
+
+        authorDisplay.style.display = "none";
+        aboutAuthor.style.display="none";
+
+        authorMenu.innerHTML="about the author";
+        aboutMenu.style.display="block";
+    }
 }
 
 //copy to clipboard function
@@ -237,12 +331,26 @@ function showHideDescription () {
 function copyToClipboard() {
     let element = document.getElementById("chairText");
     let elementText = element.textContent;
+    let alert = document.getElementById("copyAlert");
+    let alertStyle = alert.style;
+
     copyText(elementText);
+
+    //alert visible for 90ms, fades away
+    alertStyle.display="block";
+    alertStyle.opacity = "1";
+    (function fade(){(alertStyle.opacity-=".1")<0?alertStyle.display="none":setTimeout(fade,90)})();
 }
 
 function copyText(text) {
     navigator.clipboard.writeText(text);
 }
+
+
+
+
+
+
 
 
 
