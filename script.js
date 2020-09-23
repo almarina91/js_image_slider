@@ -1,3 +1,12 @@
+let description = document.getElementById("description");
+let aboutMenu = document.getElementById("about");
+let copyMenu = document.getElementById("copy");
+let chairText = document.getElementById("chairText");
+let aboutAuthor = document.getElementById("aboutAuthor");
+let authorMenu = document.getElementById("author");
+const displayBlock = "block"
+const displayNone = "none"
+
 let chair = {
     name: "Default",
     author: "Default",
@@ -137,20 +146,22 @@ let currentChairAuthorDescription = document.getElementById("aboutAuthor");
 let leftKeyCode = '37';
 let rightKeyCode = '39';
 
-function plusSlide() {
-    currentChairIndex++;
-    if (currentChairIndex > chairsArray.length-1) {
-        currentChairIndex = 0;
-    }
-
+function updateCurrentChair() {
     let currentChair = chairsArray[currentChairIndex];
     currentChairImage.src = currentChair.image;
     currentChairName.innerHTML = currentChair.name;
     currentChairYear.innerHTML = currentChair.year;
     currentChairText.innerHTML = currentChair.text;
     currentChairAuthor.innerHTML =  currentChair.author;
-    currentChairAuthorDescription.innerHTML=currentChair.aboutAuthor;
+    currentChairAuthorDescription.innerHTML = currentChair.aboutAuthor;
+}
 
+function plusSlide() {
+    currentChairIndex++;
+    if (currentChairIndex > chairsArray.length-1) {
+        currentChairIndex = 0;
+    }
+    updateCurrentChair();
     magnify("chairImage", 3);
 }
 
@@ -160,14 +171,7 @@ function minusSlide() {
         currentChairIndex = chairsArray.length-1;
     }
 
-    let currentChair = chairsArray[currentChairIndex];
-    currentChairImage.src = currentChair.image;
-    currentChairName.innerHTML = currentChair.name;
-    currentChairYear.innerHTML = currentChair.year;
-    currentChairText.innerHTML = currentChair.text;
-    currentChairAuthor.innerHTML = currentChair.author;
-    currentChairAuthorDescription.innerHTML=currentChair.aboutAuthor;
-
+    updateCurrentChair();
     magnify("chairImage", 3);
 }
 // going through chairs using keyboard
@@ -260,69 +264,58 @@ magnify("chairImage", 2);
 
 
 function showHideDescription () {
-    let description = document.getElementById("description");
-    let aboutMenu = document.getElementById("about");
-    let copyMenu = document.getElementById("copy");
-    let chairText = document.getElementById("chairText");
-    let aboutAuthor = document.getElementById("aboutAuthor");
-    let authorMenu = document.getElementById("author");
 
     //about the author section is hidden here
-    aboutAuthor.style.display="none";
+    aboutAuthor.style.display= displayNone;
 
-    if (description.style.display === "none" || description.style.display === "") {
+    if (description.style.display === displayNone || description.style.display === "") {
         description.setAttribute("class", "grid-item slide-left");
 
-        description.style.display = "block";
+        description.style.display = displayBlock;
         //chair text should now be visible
-        chairText.style.display="block";
+        chairText.style.display=displayBlock;
 
         //changes in the menu
-        copyMenu.style.display="block";
+        copyMenu.style.display=displayBlock;
         aboutMenu.innerHTML="close the description";
-        authorMenu.style.display="none";
+        authorMenu.style.display=displayNone;
 
     } else {
         description.setAttribute("class", "grid-item");
 
-        description.style.display = "none";
-        chairText.style.display="none";
+        description.style.display = displayNone;
+        chairText.style.display=displayNone;
 
         aboutMenu.innerHTML="about the chair";
-        authorMenu.style.display="block";
-        copyMenu.style.display="none";
+        authorMenu.style.display=displayBlock;
+        copyMenu.style.display=displayNone;
     }
 }
 
 //show hide the author
 
 function showHideAuthor () {
-    let authorDisplay = document.getElementById("description");
-    let aboutAuthor = document.getElementById("aboutAuthor");
-    let chairText = document.getElementById("chairText");
-    let aboutMenu = document.getElementById("about");
-    let authorMenu = document.getElementById("author");
 
     //chair description is hidden here
-    chairText.style.display="none";
+    chairText.style.display=displayNone;
 
-    if (authorDisplay.style.display === "none" || authorDisplay.style.display === "") {
+    if (authorDisplay.style.display === displayNone || authorDisplay.style.display === "") {
         authorDisplay.setAttribute("class", "grid-item slide-left");
 
-        authorDisplay.style.display = "block";
-        aboutAuthor.style.display="block";
+        authorDisplay.style.display = displayBlock;
+        aboutAuthor.style.display=displayBlock;
 
         authorMenu.innerHTML="close the description";
-        aboutMenu.style.display="none";
+        aboutMenu.style.display=displayNone;
 
     } else {
         authorDisplay.setAttribute("class", "grid-item");
 
-        authorDisplay.style.display = "none";
-        aboutAuthor.style.display="none";
+        authorDisplay.style.display = displayNone;
+        aboutAuthor.style.display=displayNone;
 
         authorMenu.innerHTML="about the author";
-        aboutMenu.style.display="block";
+        aboutMenu.style.display=displayBlock;
     }
 }
 
@@ -337,9 +330,9 @@ function copyToClipboard() {
     copyText(elementText);
 
     //alert visible for 90ms, fades away
-    alertStyle.display="block";
+    alertStyle.display=displayBlock;
     alertStyle.opacity = "1";
-    (function fade(){(alertStyle.opacity-=".1")<0?alertStyle.display="none":setTimeout(fade,90)})();
+    (function fade(){(alertStyle.opacity-=".1")<0?alertStyle.display=displayNone:setTimeout(fade,90)})();
 }
 
 function copyText(text) {

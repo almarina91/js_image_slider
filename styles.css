@@ -12,10 +12,12 @@ body {
 
 #copy, #about, #author {
     font-size: 10px;
+    cursor: grab;
 }
 
 #copy:hover, #about:hover, #author:hover{
     font-size: 13px;
+    cursor: grab;
 }
 
 .grid-container {
